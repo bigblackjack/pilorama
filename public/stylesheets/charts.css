@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/anton/v15/1Ptgg87LROyAm3Kz-Co.ttf) format('truetype');
+}
+body {
+    font-family: Anton;
+}
+.charts-header {
+    color: #000;
+    font-size: 52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px;
+    text-transform: uppercase;
+}
+
+.graph {
+    position: relative;
+    padding: 50px 25px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.graph:before {
+    content: "";
+    position: absolute; /*positions with reference to div*/
+    top: 100%;
+    left: 100%;
+    width: 0;/*define value if you didn't want hover*/
+    height: 0;
+    border-radius: 50%;
+    background: #D0E9F2;/*could be rgba value (you can remove opacity then)*/
+    opacity: 0.5;
+    transform: translate(-50%, -50%);/*ensures it is in center of image*/
+    transition: all 0.4s;
+    z-index: 0;
+}
+
+/*Demo Only*/
+.graph:hover:before {/*place this in your pseudo declaration to remove the hover*/
+    height: 80%;
+    width: 100%;/*this makes the shape wider than square*/
+    transform: translate(-60%, -60%) rotate(-10deg);/*ensures it is in center of image + rotates*/
+}
+
+.comments {
+    margin-bottom: 55px;
+}
+.comments .rectangle {
+    background: #9CC1D9;
+}
+.comments h3,
+.comments span {
+    color: #9CC1D9;
+}
+.likes .rectangle {
+    background: #8C615D;
+}
+.likes h3,
+.likes span {
+    color: #8C615D;
+}
+.views .rectangle {
+    background: #102D40;
+}
+.views h3,
+.views span {
+    color: #102D40;
+}
+
+.rectangle {
+    float: left;
+    margin-right: 10px;
+    height: 65px;
+    width: 0;
+    -webkit-transition: width 2s ease-in-out;
+    -moz-transition: width 2s ease-in-out;
+    -o-transition: width 2s ease-in-out;
+    transition: width 2s ease-in-out;
+}
+.bar h3 {
+    font-size: 40px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.bar:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+.counter {
+    float: left;
+    font-size: 40px;
+    top: 10px;
+}
+.counter:before {
+    display: inline;
+}
+.grow .comments .rectangle {
+    width: 30%;
+}
+
+.grow .views .rectangle {
+    width: 90%;
+}
+
+.grow .likes .rectangle {
+    width: 20%;
+}

@@ -1,0 +1,25 @@
+<!-- Swiper -->
+<div class="gallery">
+    <div class="gallery-header">Галерея</div>
+    <div class="swiper-container mySwiper">
+        <div class="swiper-wrapper">
+            <%for(var attachment of attachments) {%>
+            <div class="swiper-slide">
+                <img src="<%=attachment%>" alt="" />
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+<!-- Initialize Swiper -->
+<script>
+    $(document).ready(function(){
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: true,
+        });
+    });
+</script>

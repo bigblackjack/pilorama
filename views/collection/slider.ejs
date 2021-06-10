@@ -1,0 +1,52 @@
+<!-- Item slider-->
+<div class="slider container-fluid">
+    <div class="row slider-header"><h2>Наши товары</h2></div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a id="g_<%=goods[0].id%>" type="button" data-toggle="modal" data-target="#good_card_modal">
+                                <img src="<%=goods[0].thumb_photo%>" class="img-responsive center-block">
+                            </a>
+                            <h4 class="text-center"><%=goods[0].title%></h4>
+                            <h5 class="text-center"><%=goods[0].price.text%></h5>
+                        </div>
+                    </div>
+                    <% for(let i = 1; i < goods.length; i++) { %>
+                    <div class="item">
+                        <div class="col-xs-12 col-sm-6 col-md-2">
+                            <a id="g_<%=goods[i].id%>" type="button" data-toggle="modal" data-target="#good_card_modal">
+                                <img src="<%=goods[i].thumb_photo%>" class="img-responsive center-block">
+                            </a>
+                            <h4 class="text-center"><%=goods[i].title%></h4>
+                            <h5 class="text-center"><%=goods[i].price.text%></h5>
+                        </div>
+                    </div>
+                    <% }%>
+                </div>
+
+                <div id="slider-control">
+                    <a class="left carousel-control" href="#itemslider" data-slide="prev"><i class="fa fa-4x fa-chevron-left"></i></a>
+                    <a class="right carousel-control" href="#itemslider" data-slide="next"><i class="fa fa-4x fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#good_card_modal').on('show.bs.modal', function (event) {
+            let id = event.relatedTarget.id.split('g_')[1];
+            <% if (!locals.goods) goods = [] %> // Если нет товаров установим пустой
+            let goods = [<%-JSON.stringify(goods)%>][0] // десериализация данных
+            let good = goods.filter((good) => good.id.toString() === id)[0];
+            $('#good_card_title').text(good.title);
+            $('#good_card_description').text("Описание товара: " + good.description);
+            $('#good_card_price').text("Цена: " + good.price.text);
+            $('#good_card_image').attr("src", good.thumb_photo);
+        });
+    });
+</script>
+<!-- Item slider end-->

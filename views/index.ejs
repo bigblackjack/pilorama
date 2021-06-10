@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= info.name %></title>
+    <%-include('links')%>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="javascripts/script.js"></script>
+
+    <!-- MODELS -->
+    <%- include('models/good_card.ejs') %>
+  </head>
+  <body>
+    <%-include('collection/header')%>
+    <%-include('collection/news')%>
+
+    <%-include('collection/information')%>
+    <%-include('collection/gallery')%>
+    <%-include('collection/slider')%>
+    <%-include('collection/contacts')%>
+
+    <%-include('collection/footer')%>
+  </body>
+</html>

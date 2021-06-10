@@ -1,0 +1,79 @@
+.gallery {
+    position: relative;
+    padding: 50px 25px 150px;
+    background: #020E26;
+    overflow: hidden;
+}
+
+.gallery:before {
+    content: "";
+    position: absolute; /*positions with reference to div*/
+    top: 100%;
+    left: 50%;
+    width: 0;/*define value if you didn't want hover*/
+    height: 0;
+    border-radius: 50%;
+    background: #102D40;/*could be rgba value (you can remove opacity then)*/
+    opacity: 0.5;
+    transform: translate(-50%, -50%);/*ensures it is in center of image*/
+    transition: all 0.4s;
+}
+
+/*Demo Only*/
+.gallery:hover:before {/*place this in your pseudo declaration to remove the hover*/
+    height: 100%;
+    width: 150%;/*this makes the shape wider than square*/
+    transform: translate(-60%, -60%) rotate(45deg);/*ensures it is in center of image + rotates*/
+}
+.gallery {/*This stuff is for the text*/
+    font-size: 40px;
+    line-height: 300px;
+    text-align: center;
+}
+
+.gallery-header {
+    color: #FFFFFF;
+    font-size: 52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    height: 450px;
+    object-fit: fill;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+}

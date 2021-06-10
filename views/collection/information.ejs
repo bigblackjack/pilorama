@@ -1,0 +1,35 @@
+<div class="graph">
+    <div class="charts-header">Нашу страницу</div>
+    <div class="bar views">
+        <h3>Просмотрели</h3>
+        <div class="rectangle"></div>
+        <span class="counter"><%=info.views%></span>
+    </div>
+
+    <div class="bar likes">
+        <h3>Оценили</h3>
+        <div class="rectangle"></div>
+        <span class="counter"><%=info.likes%></span>
+    </div>
+
+    <div class="bar comments">
+        <h3>Прокомментировали</h3>
+        <div class="rectangle"></div>
+        <span class="counter"><%=info.comments%></span>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        /* Uses counterup.js */
+        $('.counter').counterUp({
+            delay: 20,
+            time: 2000
+        });
+
+        /* Uses waypoints.js */
+        $('.graph').waypoint(function() {
+            $('.graph').addClass('grow');
+        }, { offset: '100%' });
+    });
+</script>

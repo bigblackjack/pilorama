@@ -1,0 +1,56 @@
+@import "ticker-style.css";
+@import "slider.css";
+@import "contacts.css";
+@import "gallery.css";
+@import "charts.css";
+@import "footer.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: #00B7FF;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.header{
+  margin: 0;
+  padding: 0;
+}
+
+.centered {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  background: #00000099;
+}
+
+div.img-div{
+  height:200px;
+  width:200px;
+  overflow:hidden;
+  border-radius:50%;
+}
+
+.img-div img {
+  -webkit-transform:translate(-50%);
+  margin-left:100px;
+}
